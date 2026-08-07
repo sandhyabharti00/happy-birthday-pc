@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Your Gift</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1b0036,#5b0f7a);
+overflow:hidden;
+color:white;
+}
+.container{text-align:center}
+.gift{
+font-size:140px;
+display:inline-block;
+cursor:pointer;
+transition:transform .2s ease;
+animation:bounce 2s infinite;
+}
+.gift.open{
+animation:none;
+transform:scale(1.15) rotate(8deg);
+}
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+}
+.sparkles{
+font-size:32px;
+opacity:0;
+transition:opacity .6s;
+margin:15px 0;
+}
+.show{opacity:1}
+button{
+display:none;
+margin-top:20px;
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#ff4fa3;
+color:#fff;
+font-size:18px;
+cursor:pointer;
+}
+button:hover{background:#ff2f92}
+.note{margin-top:15px;font-size:18px;opacity:.9}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="gift" class="gift" aria-label="Gift">🎁</div>
+<div id="sparkles" class="sparkles">✨ 💖 ✨ 🎉 ✨</div>
+<div class="note" id="note">Tap the gift to open your surprise</div>
+<button id="next" onclick="window.location='memories.html'">❤️ See Our Memories</button>
+</div>
+
+<script>
+const gift=document.getElementById('gift');
+const sparkles=document.getElementById('sparkles');
+const btn=document.getElementById('next');
+const note=document.getElementById('note');
+
+gift.addEventListener('click',()=>{
+ gift.textContent='🎊';
+ gift.classList.add('open');
+ sparkles.classList.add('show');
+ note.textContent='Your surprise has begun...';
+ btn.style.display='inline-block';
+});
+</script>
+</body>
+</html>

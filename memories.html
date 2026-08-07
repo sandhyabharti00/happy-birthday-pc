@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Memories ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#18002f,#3d0b67,#6b1b8d);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:hidden;
+}
+.card{
+width:min(92vw,420px);
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+padding:22px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:16px;
+transition:opacity .8s ease, transform .8s ease;
+}
+.caption{
+margin:16px 0;
+font-size:18px;
+min-height:56px;
+}
+button{
+margin-top:12px;
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#ff4fa3;
+color:#fff;
+font-size:18px;
+cursor:pointer;
+display:none;
+}
+button:hover{background:#ff2f92}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>📸 Our Beautiful Memories</h2>
+
+<img id="photo" src="images/photo1.jpg" alt="Memory">
+
+<div class="caption" id="caption">
+Every smile with you became a beautiful memory. ❤️
+</div>
+
+<button id="nextBtn" onclick="location.href='letter.html'">
+💌 Read My Letter
+</button>
+</div>
+
+<script>
+const photos=[
+"images/photo1.jpg",
+"images/photo2.jpg",
+"images/photo3.jpg",
+"images/photo4.jpg"
+];
+
+const captions=[
+"Every smile with you became a beautiful memory. ❤️",
+"Thank you for making every moment brighter. ✨",
+"Some friendships become family. 🥹",
+"Ready for your birthday surprise? 🎂"
+];
+
+let i=0;
+const img=document.getElementById("photo");
+const cap=document.getElementById("caption");
+const btn=document.getElementById("nextBtn");
+
+function showNext(){
+ if(i>=photos.length-1){
+   btn.style.display="inline-block";
+   return;
+ }
+ i++;
+ img.style.opacity=0;
+ img.style.transform="scale(.95)";
+ setTimeout(()=>{
+   img.src=photos[i];
+   cap.textContent=captions[i];
+   img.style.opacity=1;
+   img.style.transform="scale(1)";
+   if(i===photos.length-1){
+      btn.style.display="inline-block";
+   }
+ },500);
+}
+
+setInterval(showNext,4000);
+</script>
+</body>
+</html>
