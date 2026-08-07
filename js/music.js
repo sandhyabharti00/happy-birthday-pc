@@ -2,14 +2,11 @@
    Music Controller
 ========================================================== */
 
-const bgMusic = document.getElementById("bgMusic");
-const musicButton = document.getElementById("musicButton");
-
 let musicStarted = false;
 
 function initializeMusic() {
 
-    bgMusic.volume = 0;
+    music.volume = 0;
 
     document.addEventListener(
         "click",
@@ -30,7 +27,7 @@ function initializeMusic() {
 
 function fadeInMusic() {
 
-    bgMusic.play().catch(() => {});
+    music.play().catch(() => {});
 
     let volume = 0;
 
@@ -45,7 +42,7 @@ function fadeInMusic() {
 
         }
 
-        bgMusic.volume = volume;
+        music.volume = volume;
 
     }, 100);
 
@@ -53,7 +50,7 @@ function fadeInMusic() {
 
 function fadeOutMusic() {
 
-    let volume = bgMusic.volume;
+    let volume = music.volume;
 
     const fade = setInterval(() => {
 
@@ -63,13 +60,13 @@ function fadeOutMusic() {
 
             volume = 0;
 
-            bgMusic.pause();
+            music.pause();
 
             clearInterval(fade);
 
         }
 
-        bgMusic.volume = volume;
+        music.volume = volume;
 
     }, 100);
 
@@ -77,20 +74,20 @@ function fadeOutMusic() {
 
 function toggleMusic() {
 
-    if (bgMusic.paused) {
+    if (music.paused) {
 
-        bgMusic.play();
+        music.play();
 
-        musicButton.innerHTML = "🔊";
+        document.getElementById("musicButton").innerHTML = "🔊";
 
     } else {
 
-        bgMusic.pause();
+        music.pause();
 
-        musicButton.innerHTML = "🎵";
+        document.getElementById("musicButton").innerHTML = "🎵";
 
     }
 
 }
 
-musicButton.addEventListener("click", toggleMusic);
+document.getElementById("musicButton").addEventListener("click", toggleMusic);
