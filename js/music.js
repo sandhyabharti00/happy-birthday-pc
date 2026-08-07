@@ -1,119 +1,61 @@
 /* ==========================================================
-   Happy Birthday Music Controller
+   Music Controller
 ========================================================== */
 
-let backgroundMusic = null;
+const bgMusic = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
 let musicStarted = false;
 
-function initializeMusic(audioId) {
+function initializeMusic() {
 
-    backgroundMusic = document.getElementById(audioId);
+    bgMusic.volume = 0;
 
-    if (!backgroundMusic)
-        return;
+    document.addEventListener(
+        "click",
+        () => {
 
-    backgroundMusic.volume = 0.4;
+            if (!musicStarted) {
 
-    document.addEventListener("click", startMusicOnce, {
-        once: true
-    });
+                musicStarted = true;
 
+                fadeInMusic();
+
+            }
+
+        },
+        { once: true }
+    );
 }
 
-function startMusicOnce() {
+function fadeInMusic() {
 
-    if (musicStarted || !backgroundMusic)
-        return;
-
-    musicStarted = true;
-
-    backgroundMusic.play().catch(() => {
-        console.log("Autoplay blocked until user interaction.");
-    });
-
-}
-
-function playMusic() {
-
-    if (!backgroundMusic)
-        return;
-
-    backgroundMusic.play();
-
-}
-
-function pauseMusic() {
-
-    if (!backgroundMusic)
-        return;
-
-    backgroundMusic.pause();
-
-}
-
-function toggleMusic() {
-
-    if (!backgroundMusic)
-        return;
-
-    if (backgroundMusic.paused) {
-
-        backgroundMusic.play();
-
-    } else {
-
-        backgroundMusic.pause();
-
-    }
-
-}
-
-function setVolume(value) {
-
-    if (!backgroundMusic)
-        return;
-
-    backgroundMusic.volume = value;
-
-}
-
-function fadeInMusic(duration = 2000) {
-
-    if (!backgroundMusic)
-        return;
-
-    backgroundMusic.volume = 0;
-
-    backgroundMusic.play();
+    bgMusic.play().catch(() => {});
 
     let volume = 0;
 
-    const interval = setInterval(() => {
+    const fade = setInterval(() => {
 
         volume += 0.02;
 
-        if (volume >= 0.4) {
+        if (volume >= 0.35) {
 
-            volume = 0.4;
-
-            clearInterval(interval);
+            volume = 0.35;
+            clearInterval(fade);
 
         }
 
-        backgroundMusic.volume = volume;
+        bgMusic.volume = volume;
 
-    }, duration / 20);
+    }, 100);
 
 }
 
-function fadeOutMusic(duration = 2000) {
+function fadeOutMusic() {
 
-    if (!backgroundMusic)
-        return;
+    let volume = bgMusic.volume;
 
-    let volume = backgroundMusic.volume;
-
-    const interval = setInterval(() => {
+    const fade = setInterval(() => {
 
         volume -= 0.02;
 
@@ -121,14 +63,34 @@ function fadeOutMusic(duration = 2000) {
 
             volume = 0;
 
-            backgroundMusic.pause();
+            bgMusic.pause();
 
-            clearInterval(interval);
+            clearInterval(fade);
 
         }
 
-        backgroundMusic.volume = volume;
+        bgMusic.volume = volume;
 
-    }, duration / 20);
+    }, 100);
 
 }
+
+function toggleMusic() {
+
+    if (bgMusic.paused) {
+
+        bgMusic.play();
+
+        musicButton.innerHTML = "🔊";
+
+    } else {
+
+        bgMusic.pause();
+
+        musicButton.innerHTML = "🎵";
+
+    }
+
+}
+
+musicButton.addEventListener("click", toggleMusic);

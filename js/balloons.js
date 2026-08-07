@@ -1,16 +1,17 @@
 /* ==========================================================
-   Floating Balloons Animation
+   Floating Balloons
 ========================================================== */
 
 const balloonColors = [
-    "#ff4d6d",
-    "#ff758f",
-    "#ffb703",
-    "#3a86ff",
+    "#ff4fa3",
+    "#ff8fc7",
+    "#ffd166",
+    "#4cc9f0",
     "#06d6a0",
-    "#9b5de5",
-    "#f15bb5"
+    "#9d4edd"
 ];
+
+let balloonInterval = null;
 
 function createBalloon() {
 
@@ -18,30 +19,41 @@ function createBalloon() {
 
     balloon.className = "balloon";
 
-    const size = Math.random() * 40 + 50;
+    const size = 40 + Math.random() * 40;
 
     balloon.style.width = size + "px";
-    balloon.style.height = size * 1.25 + "px";
+    balloon.style.height = size * 1.2 + "px";
 
     balloon.style.left = Math.random() * 100 + "vw";
-
-    balloon.style.bottom = "-150px";
 
     balloon.style.background =
         balloonColors[Math.floor(Math.random() * balloonColors.length)];
 
     balloon.style.animationDuration =
-        (8 + Math.random() * 8) + "s";
-
-    balloon.style.animationDelay =
-        (Math.random() * 2) + "s";
+        (8 + Math.random() * 5) + "s";
 
     document.body.appendChild(balloon);
 
     setTimeout(() => {
+
         balloon.remove();
-    }, 18000);
+
+    },13000);
 
 }
 
-setInterval(createBalloon, 900);
+function startBalloons(){
+
+    if(balloonInterval) return;
+
+    balloonInterval = setInterval(createBalloon,700);
+
+}
+
+function stopBalloons(){
+
+    clearInterval(balloonInterval);
+
+    balloonInterval = null;
+
+}

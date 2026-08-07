@@ -1,0 +1,233 @@
+/* ==========================================================
+   Letter Page
+========================================================== */
+
+body{
+
+    margin:0;
+    padding:0;
+
+    background:
+            linear-gradient(135deg,#1b0033,#3d0a63,#6a1b9a);
+
+    overflow-x:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+}
+
+
+/* Card */
+
+.letter-card{
+
+    width:min(90%,850px);
+
+    margin:60px auto;
+
+    padding:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+            0 20px 60px rgba(0,0,0,.35);
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+
+/* Heading */
+
+.letter-title{
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    margin-bottom:35px;
+
+    color:white;
+
+    text-shadow:
+            0 0 12px rgba(255,255,255,.4);
+
+}
+
+
+/* Typewriter text */
+
+#letterText{
+
+    white-space:pre-line;
+
+    line-height:2;
+
+    font-size:1.15rem;
+
+    letter-spacing:.4px;
+
+    color:#fff;
+
+    min-height:420px;
+
+}
+
+
+/* Continue Button */
+
+.continue-btn{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4fa3;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.continue-btn:hover{
+
+    background:#ff2f92;
+
+    transform:scale(1.05);
+
+}
+
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* Cursor */
+
+.cursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    height:22px;
+
+    background:white;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* Floating Petals */
+
+.petal{
+
+    position:fixed;
+
+    top:-40px;
+
+    pointer-events:none;
+
+    animation:petalFall linear forwards;
+
+    z-index:1;
+
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+                translateY(-20px)
+                rotate(0deg);
+
+    }
+
+    100%{
+
+        transform:
+                translateY(110vh)
+                rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .letter-card{
+
+        padding:30px;
+
+    }
+
+    .letter-title{
+
+        font-size:2rem;
+
+    }
+
+    #letterText{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+}

@@ -1,53 +1,68 @@
 /* ==========================================================
-   Particles.js
-   Stars • Hearts • Petals • Sparkles
+   Floating Particles
+   Hearts • Petals • Sparkles
 ========================================================== */
 
-const PARTICLES = [
-    "✨",
-    "⭐",
-    "💖",
-    "❤️",
-    "🌸"
-];
+const particleContainer = document.getElementById("particles");
 
-function random(min, max) {
-    return Math.random() * (max - min) + min;
-}
+const particleIcons = [
+    "✨",
+    "🌸",
+    "❤️",
+    "💖",
+    "⭐"
+];
 
 function createParticle() {
 
+    if (!particleContainer) return;
+
     const particle = document.createElement("div");
 
-    particle.className = "magic-particle";
+    particle.className = "particle";
 
     particle.innerHTML =
-        PARTICLES[Math.floor(Math.random() * PARTICLES.length)];
+        particleIcons[Math.floor(Math.random() * particleIcons.length)];
 
-    particle.style.left = random(0, 100) + "vw";
-
-    particle.style.top = "-40px";
+    particle.style.left = Math.random() * 100 + "vw";
 
     particle.style.fontSize =
-        random(16, 30) + "px";
+        (16 + Math.random() * 16) + "px";
 
     particle.style.animationDuration =
-        random(6, 14) + "s";
+        (6 + Math.random() * 6) + "s";
 
     particle.style.opacity =
-        random(.4, 1);
+        (0.5 + Math.random() * 0.5);
 
     particle.style.transform =
-        `rotate(${random(0,360)}deg)`;
+        `rotate(${Math.random() * 360}deg)`;
 
-    document.body.appendChild(particle);
+    particleContainer.appendChild(particle);
 
     setTimeout(() => {
 
         particle.remove();
 
-    },15000);
+    },12000);
 
 }
 
-setInterval(createParticle,350);
+let particleInterval = null;
+
+function startParticles(){
+
+    if(particleInterval) return;
+
+    particleInterval =
+        setInterval(createParticle,350);
+
+}
+
+function stopParticles(){
+
+    clearInterval(particleInterval);
+
+    particleInterval = null;
+
+}

@@ -1,0 +1,130 @@
+body{
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+
+#countdownPage{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+}
+
+
+.countNumber{
+
+    font-size:9rem;
+
+    animation:pulse 1s infinite;
+
+}
+
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(.8);
+
+        opacity:.3;
+
+    }
+
+    100%{
+
+        transform:scale(1.3);
+
+        opacity:1;
+
+    }
+
+}
+
+
+#celebrationPage{
+
+    padding-top:50px;
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+
+.birthdayTitle{
+
+    font-size:4rem;
+
+    color:white;
+
+    text-shadow:
+
+            0 0 25px hotpink;
+
+    margin-bottom:30px;
+
+}
+
+
+.heroImage{
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid white;
+
+    box-shadow:
+
+            0 0 35px hotpink;
+
+    animation:zoomImage 6s infinite alternate;
+
+}
+
+
+@keyframes zoomImage{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+
+.birthdayText{
+
+    font-size:1.4rem;
+
+    margin-top:20px;
+
+    line-height:2;
+
+}
+
+
+.continue-btn{
+
+    margin-top:40px;
+
+}
