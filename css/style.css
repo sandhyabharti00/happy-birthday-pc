@@ -108,3 +108,106 @@ img.memory{
   h1{font-size:2rem;}
   .container,.card{padding:22px;}
 }
+/* =====================================
+   Floating Balloons
+===================================== */
+
+.balloon{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    z-index:5;
+
+    animation:floatBalloon linear forwards;
+
+    box-shadow:
+    inset -8px -12px rgba(255,255,255,.25),
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:70px;
+
+    background:white;
+
+    left:50%;
+
+    bottom:-70px;
+
+}
+
+.balloon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    background:inherit;
+
+    left:50%;
+
+    transform:translateX(-50%) rotate(45deg);
+
+    bottom:-5px;
+
+}
+
+@keyframes floatBalloon{
+
+    0%{
+
+        transform:
+        translateY(0)
+        translateX(0);
+
+    }
+
+    25%{
+
+        transform:
+        translateY(-25vh)
+        translateX(-15px);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-50vh)
+        translateX(15px);
+
+    }
+
+    75%{
+
+        transform:
+        translateY(-75vh)
+        translateX(-10px);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        translateX(20px);
+
+        opacity:0;
+
+    }
+
+}
