@@ -179,6 +179,7 @@ gift.addEventListener("click", () => {
         setTimeout(()=>{
 
             image.src = photos[index];
+            document.getElementById("memoryBackground").src = photos[index];
 
             caption.innerHTML = captions[index];
 
@@ -401,27 +402,27 @@ function createSparkles(){
 
 const birthdayLetter = `
 
-Happy Birthday to my favourite girl! ❤️
+Happy Birthday to my favourite person! ❤️
 
-Tu meri best friend hi nahi,
+Tum meri best friend hi nahi,
 meri safe place,
 meri biggest happiness
-aur meri life ka sabse beautiful part hai.
+aur meri life ka sabse beautiful part ho.
 
-Tere saath har chhota moment bhi
+Tmhare saath har chhota moment bhi
 special ban jaata hai.
 
-Meri dua hai ki teri life hamesha
+Meri dua hai ki tmhari life hamesha
 happiness,
 love,
 success,
 aur endless smiles se bhari rahe.
 
-Jo bhi tu dil se chahe,
-woh sab tujhe mile.
+Jo bhi tum dil se chaho,
+woh sab tumhe mile.
 
 Kabhi kisi cheez ki kami na ho,
-aur teri cute si smile
+aur tmhari cute si smile
 hamesha isi tarah chamakti rahe.
 
 Thank you for always being there.
@@ -443,11 +444,11 @@ Never stop being
 the amazing person you are.
 
 Happy Birthday once again
-bestie 🥹💐🎉
+baby 🥹💐🎉
 
 Love you loads ❤️
 
-— Sandhya
+— Sandy
 
 `;
 
