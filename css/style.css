@@ -284,23 +284,16 @@ button {
     width: 100%;
     height: 100svh;
     overflow: hidden;
-    background: #000;
+    background: radial-gradient(circle at top, #4b236a, #090316 72%);
 }
 
 .memory-background {
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(30px) brightness(.32);
-    transform: scale(1.14);
+    display: none;
 }
 
 .memory-image {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 70px;
     right: 18px;
     bottom: 105px;
@@ -313,11 +306,7 @@ button {
     box-shadow: 0 20px 60px rgba(0, 0, 0, .58);
     object-fit: contain;
     transform: none;
-    transition: opacity .35s ease;
-}
-
-.memory-image.is-fading {
-    opacity: 0;
+    opacity: 1 !important;
 }
 
 .memory-overlay {
@@ -376,10 +365,10 @@ button {
 }
 
 #letterText {
-    max-height: min(58svh, 540px);
+    max-height: none;
     min-height: 0;
-    overflow-y: auto;
-    padding-right: 8px;
+    overflow: visible;
+    padding-right: 0;
     color: white;
     font-size: clamp(1rem, 2vw, 1.14rem);
     line-height: 1.8;
@@ -438,8 +427,9 @@ button {
     margin: 4px auto 0;
     border: 6px solid white;
     border-radius: 50%;
+    background: #1d1145;
     box-shadow: 0 0 40px hotpink;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .birthday-message,
@@ -509,5 +499,5 @@ button {
     .glass { padding: 28px 20px; }
     .memory-image { top: 62px; right: 12px; bottom: 112px; left: 12px; width: calc(100% - 24px); height: calc(100% - 174px); }
     .memory-overlay { width: calc(100% - 24px); padding: 12px; }
-    #letterText { max-height: 56svh; line-height: 1.7; }
+    #letterText { line-height: 1.7; }
 }
