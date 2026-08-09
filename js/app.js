@@ -422,7 +422,6 @@ and more beautiful with you by my side.
 Thank you for being my constant and my biggest cheerleader. 
 I love you more than words can say!! 💖
 
-Thank you for always being there.
 Stay happy. Stay blessed.💖
 Never stop being
 the amazing person you are.
@@ -430,6 +429,8 @@ the amazing person you are.
 Happy Birthday once again
 baby!! 🥹💐🎉
 
+Loads of love
+-Sandy
 `;
 
 let letterIndex = 0;
@@ -455,7 +456,7 @@ function startLetter(){
         area.textContent += birthdayLetter.charAt(letterIndex);
 
         letterIndex++;
-
+        area.scrollTop = area.scrollHeight;
         if(letterIndex >= birthdayLetter.length){
 
             clearInterval(timer);
