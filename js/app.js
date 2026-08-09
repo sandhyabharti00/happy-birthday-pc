@@ -436,39 +436,45 @@ Loads of love
 let letterIndex = 0;
 
 function startLetter(){
-
     const area = document.getElementById("letterText");
 
     const cursor = document.getElementById("cursor");
 
-    const continueButton = document.getElementById("continueCelebration");
-
-    area.textContent = "";
-
-    cursor.style.display="inline-block";
-
-    continueButton.hidden = true;
+    area.innerHTML = "";
 
     letterIndex = 0;
 
     const timer = setInterval(()=>{
 
-        area.textContent += birthdayLetter.charAt(letterIndex);
+        area.innerHTML += birthdayLetter.charAt(letterIndex);
 
         letterIndex++;
+
         area.scrollTop = area.scrollHeight;
+
         if(letterIndex >= birthdayLetter.length){
 
             clearInterval(timer);
 
             cursor.style.display="none";
 
-            continueButton.hidden = false;
+            setTimeout(()=>{
+
+                fadeOut(letterPage);
+
+                setTimeout(()=>{
+
+                    fadeIn(celebrationPage);
+
+                    startCelebration();
+
+                },800);
+
+            },5000);
 
         }
 
-    },32);
-
+    },35);
 }
 // ======================================
 // Celebration
