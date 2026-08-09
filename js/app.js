@@ -133,15 +133,27 @@ gift.addEventListener("click", () => {
 
         "images/photo3.jpg",
 
-        "images/photo4.jpg"
+        "images/photo4.jpg",
+
+        "images/photo5.jpg",
+
+        "images/photo6.jpg",
+
+        "images/photo10.jpg"
 
     ];
 
     const captions = [
 
+        "My Favourite Human 🥹❤️",
+
         "Every smile with you became my favourite memory ❤️",
 
         "Thank you for making every moment unforgettable ✨",
+
+        "Thank you for being there ❤️",
+
+        " ✨ Better Together ✨",
 
         "Life feels brighter with you by my side 🥹",
 
