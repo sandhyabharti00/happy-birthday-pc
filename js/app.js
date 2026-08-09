@@ -415,51 +415,20 @@ const birthdayLetter = `
 
 Happy Birthday to my favourite person! ❤️
 
-Tum meri best friend hi nahi,
-meri safe place,
-meri biggest happiness
-aur meri life ka sabse beautiful part ho.
-
-Tmhare saath har chhota moment bhi
-special ban jaata hai.
-
-Meri dua hai ki tmhari life hamesha
-happiness,
-love,
-success,
-aur endless smiles se bhari rahe.
-
-Jo bhi tum dil se chaho,
-woh sab tumhe mile.
-
-Kabhi kisi cheez ki kami na ho,
-aur tmhari cute si smile
-hamesha isi tarah chamakti rahe.
+To the one who holds my whole heart 
+and makes every single day brighter.✨✨
+Life is just so much sweeter, funnier,
+and more beautiful with you by my side.
+Thank you for being my constant and my biggest cheerleader. 
+I love you more than words can say!! 💖
 
 Thank you for always being there.
-
-For understanding me
-without words.
-
-For making life
-so much brighter.
-
-I'm really lucky
-to have a best friend like you.
-
-Stay happy.
-
-Stay blessed.
-
+Stay happy. Stay blessed.💖
 Never stop being
 the amazing person you are.
 
 Happy Birthday once again
-baby 🥹💐🎉
-
-Love you loads ❤️
-
-— Sandy
+baby!! 🥹💐🎉
 
 `;
 
