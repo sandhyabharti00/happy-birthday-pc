@@ -265,7 +265,7 @@ function fadeIn(section){
 
     section.style.opacity = 0;
 
-    section.style.display = "flex";
+    section.style.display = "grid";
 
     setTimeout(()=>{
 
@@ -459,23 +459,13 @@ function startLetter(){
 
     const cursor = document.getElementById("cursor");
 
+    const continueButton = document.getElementById("continueCelebration");
+
     area.textContent = birthdayLetter;
 
     cursor.style.display="none";
 
-    setTimeout(()=>{
-
-        fadeOut(letterPage);
-
-        setTimeout(()=>{
-
-            fadeIn(celebrationPage);
-
-            startCelebration();
-
-        },800);
-
-    },12000);
+    continueButton.hidden = false;
 
 }
 // ======================================
@@ -523,3 +513,17 @@ function startCelebration(){
     },1000);
 
 }
+
+document.getElementById("continueCelebration").addEventListener("click", () => {
+
+    fadeOut(letterPage);
+
+    setTimeout(() => {
+
+        fadeIn(celebrationPage);
+
+        startCelebration();
+
+    }, 800);
+
+});

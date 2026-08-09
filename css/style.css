@@ -384,6 +384,22 @@ button {
     animation: blink .8s infinite;
 }
 
+.continue-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+}
+
+.continue-btn:hover,
+.continue-btn:focus-visible {
+    transform: scale(1.05);
+    background: #ff2f92;
+}
+
 @keyframes blink {
     50% { opacity: 0; }
 }
