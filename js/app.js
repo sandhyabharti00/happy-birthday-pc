@@ -522,16 +522,3 @@ function startCelebration(){
 
 }
 
-document.getElementById("continueCelebration").addEventListener("click", () => {
-
-    fadeOut(letterPage);
-
-    setTimeout(() => {
-
-        fadeIn(celebrationPage);
-
-        startCelebration();
-
-    }, 800);
-
-});
