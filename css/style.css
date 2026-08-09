@@ -77,6 +77,11 @@ body::before {
     overflow-y: auto;
 }
 
+#letter.active,
+#celebration.active {
+    display: block !important;
+}
+
 @keyframes page-in {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
@@ -357,6 +362,11 @@ button {
     text-align: left;
 }
 
+#letter .letter-card,
+#celebration .celebration-card {
+    margin: 0 auto;
+}
+
 .letter-title {
     color: #ffd6ea;
     font-family: "Great Vibes", cursive;
@@ -434,11 +444,12 @@ button {
 }
 
 .birthday-heading {
-    font-size: clamp(2.3rem, 6vw, 4rem);
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 4.5vw, 3.1rem);
 }
 
 .birthday-photo {
-    width: min(70vw, 280px);
+    width: min(62vw, 220px);
     aspect-ratio: 1;
     margin: 4px auto 0;
     border: 6px solid white;
@@ -450,16 +461,16 @@ button {
 
 .birthday-message,
 .ending-line {
-    margin-top: 18px;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.6;
+    margin-top: 12px;
+    font-size: clamp(.95rem, 2.1vw, 1.12rem);
+    line-height: 1.45;
 }
 
 .signature {
-    margin-top: 30px;
+    margin-top: 18px;
     color: #ffd6ea;
     font-family: "Great Vibes", cursive;
-    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-size: clamp(2.1rem, 4vw, 2.7rem);
 }
 
 .particle {

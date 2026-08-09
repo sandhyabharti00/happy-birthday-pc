@@ -461,11 +461,31 @@ function startLetter(){
 
     const continueButton = document.getElementById("continueCelebration");
 
-    area.textContent = birthdayLetter;
+    area.textContent = "";
 
-    cursor.style.display="none";
+    cursor.style.display="inline-block";
 
-    continueButton.hidden = false;
+    continueButton.hidden = true;
+
+    letterIndex = 0;
+
+    const timer = setInterval(()=>{
+
+        area.textContent += birthdayLetter.charAt(letterIndex);
+
+        letterIndex++;
+
+        if(letterIndex >= birthdayLetter.length){
+
+            clearInterval(timer);
+
+            cursor.style.display="none";
+
+            continueButton.hidden = false;
+
+        }
+
+    },32);
 
 }
 // ======================================
