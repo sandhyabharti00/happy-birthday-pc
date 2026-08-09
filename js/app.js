@@ -118,7 +118,7 @@ gift.addEventListener("click", () => {
 
     giftText.innerHTML =
 
-        "✨ Your journey is about to begin... ❤️";
+        "✨ You have a beautiful surprise ahead... ❤️";
 
     createSparkles();
     // ======================================
@@ -470,11 +470,11 @@ function startLetter(){
 
                 },800);
 
-            },5000);
+            },20000);
 
         }
 
-    },35);
+    },20);
 }
 // ======================================
 // Celebration

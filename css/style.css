@@ -358,8 +358,20 @@ button {
 }
 
 .letter-card {
-    margin: auto;
-    text-align: left;
+    margin:auto;
+
+    text-align:left;
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    scrollbar-width:none;
+}
+.letter-card::-webkit-scrollbar{
+
+    display:none;
+
 }
 
 #letter .letter-card,
